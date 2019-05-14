@@ -23,17 +23,12 @@ jar {
     manifest {
         attributes 'Main-Class': 'com.github.pozo.SwearPlugin'
     }
-
-    // This line of code recursively collects and copies all of a project's files
-    // and adds them to the JAR itself. One can extend this task, to skip certain
-    // files or particular types at will
-//    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
 
 gradlePlugin {
     plugins {
         swear {
-            id = 'com.github.pozo'
+            id = 'com.github.pozo.swear'
             implementationClass = "com.github.pozo.SwearPlugin"
         }
     }
